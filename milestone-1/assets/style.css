@@ -1,0 +1,57 @@
+body{
+    background-color: #DCDBD2;
+}
+header{
+    height: 80px;
+    background-color: #009688 ;
+}
+aside{
+    background-color: beige;
+}
+.chat{
+   background-image:url(../img/mine.jpg);
+}
+.window{
+    width: 900px;
+    height: 500px;
+    background-color: honeydew;
+    position: absolute;
+    left: 50%;
+    top: 270px;
+    transform: translate(-50%, -50%);
+    
+}
+/* colonna di sinistra */
+aside{
+    background-color: #FAFAFA;
+    height: 100%;
+}
+.asideHeader{
+    height: 60px;
+    background-color: #EAEAEA;
+}
+.connectionError{
+    height: 70px;
+    background-color: #8EDAFC;
+}
+.search{
+    background-color: #F3EEEA;
+}
+/* sezione chat aperta */
+.chat{
+    background-color: khaki;
+    height: 100%;
+    position: relative;
+}
+.headerChat{
+    height: 60px;
+    background-color: #EAEAEA;
+    border-left: 1px solid  black;
+}
+.inputChat{
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    bottom: 0px;
+    background-color: #EAEAEA;
+}
