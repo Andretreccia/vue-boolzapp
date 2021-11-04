@@ -48,7 +48,15 @@
 
                 </div>
                 <div class="chatList">
-                    <div class="contact flex">
+                    <div class="contact flex" v-for="contact in contacts">
+                        <div class="imgContact">
+                            <img :src="'../milestone-1/img/avatar'+ contact.avatar + '.jpg'" alt="">
+                       </div>
+                       <div class="contactName">
+                           <p>{{contact.name}}</p>
+                       </div>
+                    </div>
+                    <!-- <div class="contact flex">
                        <div class="imgContact">
                             <img src="../milestone-1/img/avatar_1.jpg" alt="">
                        </div>
@@ -56,7 +64,7 @@
                            <p>Michele</p>
                        </div>
 
-                    </div>
+                    </div> -->
                 </div>
           
           
