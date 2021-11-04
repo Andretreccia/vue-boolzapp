@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <!-- finestra dell app -->
+        <div class="window flex">
+            <!-- colonna di sinistra -->
+            <aside class="">
+                <div class="asideHeader flex">
+                    <div class="avatar flex ">
+                        <img src="../milestone-1/img/avatar_io.jpg" alt="" >
+                        <p>Nome utente</p>
+                    </div>
+                    <!-- icone nper interazioni-->
+                    <div class="interaction flex">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="connectionError flex">
+                    <div class="iconBell">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="connectionText">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <div class="containerSearch">
+                    <span class="search flex">
+                        <div class="iconSearch flex">
+                            <i class="fas fa-search"></i>
+                        </div>        
+                        <input type="text" placeholder=" Cerca o inizia una nuova chat">
+                    </span>
+
+                </div>
+                <div class="chatList">
+                    <div class="contact flex" v-for="(contact, index) in contacts">
+                        <div class="imgContact">
+                            <img :src="'../milestone-1/img/avatar'+ contact.avatar + '.jpg'" alt="">
+                       </div>
+                       <div class="contactName">
+                           <p>{{contact.name}}</p>
+                       </div>
+                    </div>
+                    <!-- <div class="contact flex">
+                       <div class="imgContact">
+                            <img src="../milestone-1/img/avatar_1.jpg" alt="">
+                       </div>
+                       <div class="contactName">
+                           <p>Michele</p>
+                       </div>
+
+                    </div> -->
+                </div>
+          
+          
+            </aside>
+            <!-- colonna di destra, contenuto della chat -->
+            <div class="chat">
+                <div class="headerChat flex">
+                     <div class="avatar flex ">
+                        <img :src="'../milestone-1/img/avatar'+ contacts[counterContact].avatar + '.jpg'" alt="" >
+                        
+                        <div class="avatarChat">
+                            <h6>{{contacts[counterContact].name}}</h6>
+                            <p>Ultimo accesso oggi alle</p>
+                        </div>
+                    </div>
+
+                    <div class="interaction flex">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+
+                </div>
+                <div class="textChat">
+                    
+                </div>
+                <div class="inputChat flex">
+                    <div class="emoticons">
+                        <i class="far fa-smile"></i>
+                    </div>
+                    <input class="textMessage" type="text" placeholder="Scrivi un messaggio">
+                    <div class="vocalMessage">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./assets/app.js"></script>
+</body>
+</html>
+
