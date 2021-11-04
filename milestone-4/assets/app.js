@@ -85,6 +85,7 @@ const app = new Vue({
         ],
         counterContact: 0,
         newMessage: "",
+        searchContact: "",
     },
     methods: {
 
@@ -117,3 +118,10 @@ const app = new Vue({
 })
 
 /* qui la prova del codice */
+//creazione oggetto vuoto
+//l utente scrive nell input
+//collegamento v-modelcon l oggetto vuoto
+//quello che inserisce viene inserito automaticamente in un oggetto
+
+//vedere se le lettere che scrive l utente sono incluse nella stringa del nome
+//se sono incluse visualizzare gli oggetti(contatti) che includono quelle lettere
