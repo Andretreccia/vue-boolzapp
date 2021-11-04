@@ -1,127 +1,220 @@
-const app = new Vue({
-    el: '#root',
-    data: {
-        contacts: [{
-                name: 'Michele',
-                avatar: '_1',
-                visible: true,
-                messages: [{
-                        date: '10/01/2020 15:30:55',
-                        text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Fabio',
-                avatar: '_2',
-                visible: true,
-                messages: [{
-                        date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
-                    },
-                    {
-                        date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
-                    }
-                ],
-            },
-            {
-                name: 'Samuele',
-                avatar: '_3',
-                visible: true,
-                messages: [{
-                        date: '28/03/2020 10:10:40',
-                        text: 'La Marianna va in campagna',
-                        status: 'received'
-                    },
-                    {
-                        date: '28/03/2020 10:20:10',
-                        text: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '28/03/2020 16:15:22',
-                        text: 'Ah scusa!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Luisa',
-                avatar: '_4',
-                visible: true,
-                messages: [{
-                        date: '10/01/2020 15:30:55',
-                        text: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        text: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
-                    },
+< !DOCTYPE html >
+    <
+    html lang = "en" >
+
+    <
+    head >
+    <
+    meta charset = "UTF-8" >
+    <
+    meta http - equiv = "X-UA-Compatible"
+content = "IE=edge" >
+    <
+    meta name = "viewport"
+content = "width=device-width, initial-scale=1.0" >
+    <
+    link rel = "preconnect"
+href = "https://fonts.googleapis.com" >
+    <
+    link rel = "preconnect"
+href = "https://fonts.gstatic.com"
+crossorigin >
+    <
+    link href = "https://fonts.googleapis.com/css2?family=Acme&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+rel = "stylesheet" >
+    <
+    link rel = "stylesheet"
+href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+integrity = "sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+crossorigin = "anonymous"
+referrerpolicy = "no-referrer" /
+    >
+    <
+    link rel = "stylesheet"
+href = "./assets/style.css" >
+    <
+    title > Document < /title> <
+    /head>
+
+<
+body >
+    <
+    div id = "root" >
+    <!-- finestra dell app -->
+    <
+    div class = "window flex" >
+    <!-- colonna di sinistra -->
+    <
+    aside class = "" >
+    <
+    div class = "asideHeader flex" >
+    <
+    div class = "avatar flex" >
+    <
+    img src = "../milestone-2/img/avatar_io.jpg"
+alt = "" >
+    <
+    p > Nome utente < /p> <
+    /div>
+    <!-- icone nper interazioni-->
+    <
+    div class = "interaction flex" >
+    <
+    i class = "fas fa-circle-notch" > < /i> <
+    i class = "fas fa-comment-alt" > < /i> <
+    i class = "fas fa-ellipsis-v" > < /i> <
+    /div> <
+    /div> <
+    div class = "connectionError flex" >
+    <
+    div class = "iconBell" >
+    <
+    i class = "fas fa-bell-slash" > < /i> <
+    /div> <
+    div class = "connectionText" >
+    <
+    p > Ricevi notifiche di nuovi messaggi < /p> <
+    a href = "#" > Attiva notifiche desktop < /a> <
+    /div> <
+    /div> <
+    div class = "containerSearch" >
+    <
+    span class = "search flex" >
+    <
+    div class = "iconSearch flex" >
+    <
+    i class = "fas fa-search" > < /i> <
+    /div> <
+    input type = "text"
+@keyup = ""
+v - model = "searchContact"
+placeholder = "Cerca o inizia una nuova chat" >
+    <
+    /span>
+
+<
+/div> <
+div class = "chatList" >
+    <!-- singolo contatto -->
+    <!-- contact.name.toLowerCase().includes(toLowerCase()searchContact) -->
+    <
+    div @click = "selectContact(index)"
+v -
+    for = "(contact,
+index) in contacts " v-if="
+contact.name.toLowerCase().includes(searchContact.toLowerCase())
+" :class="
+index ===
+    counterContact ? 'selected' : ''
+" class="
+contact
+flex "> <
+    div class = "imgContact" >
+    <
+    img: src = "'../milestone-2/img/avatar'+
+contact.avatar + '.jpg'
+" alt="
+"> <
+/div> <
+div class = "contactName" >
+    <
+    p > {
+        { contact.name } } < /p> <
+    /div> <
+    /div>
+    <!-- <div class="contact flex">
+    <
+    div class = "imgContact" >
+    <
+    img src = "../milestone-2/img/avatar_1.jpg"
+alt = "" >
+    <
+    /div> <
+    div class = "contactName" >
+    <
+    p > Michele < /p> <
+    /div>
+
+<
+/div> --> <
+/div>
 
 
-                ],
-            },
-        ],
-        counterContact: 0,
-        newMessage: "",
-        searchContact: "",
-    },
-    methods: {
+<
+/aside>
+<!-- colonna di destra, contenuto della chat -->
+<
+div class = "chat" >
+    <
+    div class = "headerChat flex" >
+    <
+    div class = "avatar flex" >
+    <
+    img: src = "'../milestone-2/img/avatar'+
+contacts[counterContact].avatar + '.jpg'
+" alt="
+"> <
+div class = "avatarChat" >
+    <
+    h6 > {
+        { contacts[counterContact].name } } < /h6> <
+    p > Ultimo accesso oggi alle < /p> <
+    /div> <
+    /div>
 
-        receiveMessage() {
-            this.contacts[this.counterContact].messages.push({
+<
+div class = "interaction flex" >
+    <
+    i class = "fas fa-search" > < /i> <
+    i class = "fas fa-paperclip" > < /i> <
+    i class = "fas fa-ellipsis-v" > < /i> <
+    /div>
 
-                date: '10/01/2020 15:50:00',
-                text: "ok",
-                status: 'received'
-            })
+<
+/div> <
+div class = "textChat flex" >
+    <
+    div: class = "message.status"
+class = "message"
+v -
+    for = "message in
+contacts[counterContact].messages "> <
+    p > {
+        { message.text } } < /p> <
+    span > {
+        { message.date } } < /span> <
+    /div>
+    <!-- <div class="message received">
+    <
+    p > prova testo messaggio di lorem < /p> <
+    span > < /span> <
+    /div> --> <
+    /div> <
+    div class = "inputChat flex" >
+    <
+    div class = "emoticons" >
+    <
+    i class = "far fa-smile" > < /i> <
+    /div> <
+    input class = "textMessage"
+type = "text"
+@keyup.enter = "sendText"
+v - model = "newMessage"
+placeholder = "Scrivi un messaggio" >
+    <
+    div class = "vocalMessage" >
+    <
+    i class = "fas fa-microphone" > < /i> <
+    /div> <
+    /div>
 
-        },
-        selectContact(i) {
-            this.counterContact = i
+<
+/div> <
+/div> <
+/div> <
+script src = "https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" > < /script> <
+    script src = "./assets/app.js" > < /script> <
+    /body>
 
-        },
-        sendText() {
-            if (this.newMessage != "") {
-                this.contacts[this.counterContact].messages.push({
-
-                    date: '10/01/2020 15:50:00',
-                    text: this.newMessage,
-                    status: 'sent'
-                })
-                setTimeout(this.receiveMessage, 1000);
-            }
-            this.newMessage = ""
-        }
-    }
-})
-
-/* qui la prova del codice */
-//creazione oggetto vuoto
-//l utente scrive nell input
-//collegamento v-modelcon l oggetto vuoto
-//quello che inserisce viene inserito automaticamente in un oggetto
-
-//vedere se le lettere che scrive l utente sono incluse nella stringa del nome
-//se sono incluse visualizzare gli oggetti(contatti) che includono quelle lettere
+<
+/html>

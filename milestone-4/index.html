@@ -46,16 +46,19 @@
                             <div class="iconSearch flex">
                                 <i class="fas fa-search"></i>
                             </div>
-                            <input type="text" v-model="searchContact"
+                            <input type="text" @keyup=""
+                                v-model="searchContact"
                                 placeholder="Cerca o inizia una nuova chat">
                         </span>
 
                 </div>
                 <div class="chatList">
                     <!-- singolo contatto -->
-                    <div @click="selectContact(index)" :class="index ===
+                    <!-- contact.name.toLowerCase().includes(toLowerCase()searchContact) -->
+                    <div @click="selectContact(index)" v-for="(contact,
+                            index) in contacts" v-if="contact.name.toLowerCase().includes(searchContact.toLowerCase())" :class="index ===
                             counterContact ? 'selected' : ''" class="contact
-                            flex" v-for="(contact, index) in contacts">
+                            flex">
                         <div class="imgContact">
                             <img :src="'../milestone-2/img/avatar'+
                                     contact.avatar + '.jpg'" alt="">
