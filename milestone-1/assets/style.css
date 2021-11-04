@@ -127,10 +127,24 @@ aside{
 .inputChat{
     height: 60px;
     width: 100%;
-   /*  position: absolute;
-    bottom: 0px; */
+    padding: 10px;
+    justify-content: space-between;
     background-color: #EAEAEA;
 }
+    .emoticons, 
+    .vocalMessage{
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        color: rgb(124, 124, 124);
+    }
+    .textMessage{
+        width: calc(100% - 110px);
+        border-style: none;
+        border-radius: 5px;
+    }
 /* linear-gradient sullo sfondo 
 e altezza del bosy 100vh
 
