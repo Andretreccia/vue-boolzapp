@@ -146,13 +146,35 @@ aside{
     background-image:url(../img/mine.jpg);
     min-height: calc(100% - 120px);
     overflow-y: scroll;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    
 }
-.sent{
-    background-color: #009688;
-}
-.received{
-    background-color: gray;
-}
+/* sezione dei messaggi */
+
+    .message{
+        max-width: 250px;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 5px 0;
+    }
+    .sent{
+        background-color: #c6f8a5;
+        align-self: flex-end;
+        text-align: end;
+    }
+    .received{
+        background-color: whitesmoke;
+        
+    }
+    .message span{
+        color: gray;
+        font-size: 12px;
+    }
+
+/* ################################# */
+
+
     .headerChat{
     height: 60px;
     background-color: #EAEAEA;

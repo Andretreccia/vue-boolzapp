@@ -19,7 +19,7 @@
             <aside class="">
                 <div class="asideHeader flex">
                     <div class="avatar flex ">
-                        <img src="../milestone-1/img/avatar_io.jpg" alt="" >
+                        <img src="../milestone-2/img/avatar_io.jpg" alt="" >
                         <p>Nome utente</p>
                     </div>
                     <!-- icone nper interazioni-->
@@ -50,7 +50,7 @@
                 <div class="chatList">
                     <div class="contact flex" v-for="(contact, index) in contacts">
                         <div class="imgContact">
-                            <img :src="'../milestone-1/img/avatar'+ contact.avatar + '.jpg'" alt="">
+                            <img :src="'../milestone-2/img/avatar'+ contact.avatar + '.jpg'" alt="">
                        </div>
                        <div class="contactName">
                            <p>{{contact.name}}</p>
@@ -58,7 +58,7 @@
                     </div>
                     <!-- <div class="contact flex">
                        <div class="imgContact">
-                            <img src="../milestone-1/img/avatar_1.jpg" alt="">
+                            <img src="../milestone-2/img/avatar_1.jpg" alt="">
                        </div>
                        <div class="contactName">
                            <p>Michele</p>
@@ -73,7 +73,7 @@
             <div class="chat">
                 <div class="headerChat flex">
                      <div class="avatar flex ">
-                        <img :src="'../milestone-1/img/avatar'+ contacts[counterContact].avatar + '.jpg'" alt="" >
+                        <img :src="'../milestone-2/img/avatar'+ contacts[counterContact].avatar + '.jpg'" alt="" >
                         
                         <div class="avatarChat">
                             <h6>{{contacts[counterContact].name}}</h6>
@@ -88,8 +88,15 @@
                     </div>
 
                 </div>
-                <div class="textChat">
-                    
+                <div class="textChat flex">
+                    <div :class="message.status" class="message" v-for="message in contacts[counterContact].messages">
+                        <p>{{message.text}}</p>
+                        <span>{{message.date}}</span>
+                    </div>
+                    <!-- <div class="message received">
+                        <p>prova testo messaggio di lorem</p>
+                        <span></span>
+                    </div> -->
                 </div>
                 <div class="inputChat flex">
                     <div class="emoticons">
