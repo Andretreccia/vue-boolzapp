@@ -77,16 +77,30 @@ const app = new Vue({
                         date: '10/01/2020 15:50:00',
                         text: 'Si, ma preferirei andare al cinema',
                         status: 'received'
-                    }
+                    },
+
+
                 ],
             },
         ],
         counterContact: 0,
+        newMessage: "",
     },
     methods: {
         selectContact(i) {
             this.counterContact = i
 
+        },
+        sendText() {
+            if (this.newMessage != "") {
+                this.contacts[this.counterContact].messages.push({
+
+                    date: '10/01/2020 15:50:00',
+                    text: this.newMessage,
+                    status: 'sent'
+                })
+            }
+            this.newMessage = ""
         }
     }
 })
