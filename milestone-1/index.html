@@ -48,7 +48,7 @@
 
                 </div>
                 <div class="chatList">
-                    <div class="contact flex" v-for="contact in contacts">
+                    <div class="contact flex" v-for="(contact, index) in contacts">
                         <div class="imgContact">
                             <img :src="'../milestone-1/img/avatar'+ contact.avatar + '.jpg'" alt="">
                        </div>
@@ -73,9 +73,10 @@
             <div class="chat">
                 <div class="headerChat flex">
                      <div class="avatar flex ">
-                        <img src="../milestone-1/img/avatar_io.jpg" alt="" >
+                        <img :src="'../milestone-1/img/avatar'+ contacts[counterContact].avatar + '.jpg'" alt="" >
+                        
                         <div class="avatarChat">
-                            <h6>Nome utente</h6>
+                            <h6>{{contacts[counterContact].name}}</h6>
                             <p>Ultimo accesso oggi alle</p>
                         </div>
                     </div>

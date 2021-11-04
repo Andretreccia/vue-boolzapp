@@ -147,6 +147,12 @@ aside{
     min-height: calc(100% - 120px);
     overflow-y: scroll;
 }
+.sent{
+    background-color: #009688;
+}
+.received{
+    background-color: gray;
+}
     .headerChat{
     height: 60px;
     background-color: #EAEAEA;

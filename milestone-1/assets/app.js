@@ -85,7 +85,8 @@ const app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        counterContact: 0,
     }
 })
 
