@@ -87,6 +87,15 @@ const app = new Vue({
         newMessage: "",
     },
     methods: {
+        receiveMessage() {
+            this.contacts[this.counterContact].messages.push({
+
+                date: '10/01/2020 15:50:00',
+                text: "Porcoddio",
+                status: 'received'
+            })
+
+        },
         selectContact(i) {
             this.counterContact = i
 
@@ -100,6 +109,7 @@ const app = new Vue({
                     status: 'sent'
                 })
             }
+            setTimeout(this.receiveMessage(), 3000);
             this.newMessage = ""
         }
     }

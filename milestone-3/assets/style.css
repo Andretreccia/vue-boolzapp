@@ -161,7 +161,7 @@ aside {
 .textChat {
     background-image: url(../img/mine.jpg);
     min-height: calc(100% - 120px);
-    overflow-y: scroll;
+    overflow-y: auto;
     flex-direction: column;
     padding: 2rem 4rem;
 }
