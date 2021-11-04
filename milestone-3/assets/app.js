@@ -88,7 +88,6 @@ const app = new Vue({
 
     },
     methods: {
-
         receiveMessage() {
             this.contacts[this.counterContact].messages.push({
 

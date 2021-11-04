@@ -55,7 +55,7 @@
                     <!-- singolo contatto -->
                     <div @click="selectContact(index)" :class="index ===
                             counterContact ? 'selected' : ''" class="contact
-                            flex" v-for="(contact, index) in contacts">
+                            flex" v-for="(contact, index) in contacts" >
                         <div class="imgContact">
                             <img :src="'../milestone-2/img/avatar'+
                                     contact.avatar + '.jpg'" alt="">

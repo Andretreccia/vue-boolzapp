@@ -49,9 +49,7 @@ aside {
     justify-content: space-between;
 }
 
-.search {
-    background-color: #F3EEEA;
-}
+
 
 .avatar {
     align-items: center;
@@ -114,6 +112,7 @@ aside {
     width: calc(100% - 30px);
     height: 30px;
     border-style: none;
+    padding: 5px;
 }
 
 .iconSearch {
