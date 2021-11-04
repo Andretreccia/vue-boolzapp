@@ -1,95 +1,133 @@
-const app = new Vue({
-    el: '#root',
-    data: {
-        contacts: [
-            {
-                name: 'Michele',
-                avatar: '_1',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Fabio',
-                avatar: '_2',
-                visible: true,
-                messages: [
-                    {
-                        date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
-                    },
-                    {
-                        date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
-                    }
-                ],
-            },
-            {
-                name: 'Samuele',
-                avatar: '_3',
-                visible: true,
-                messages: [
-                    {
-                        date: '28/03/2020 10:10:40',
-                        text: 'La Marianna va in campagna',
-                        status: 'received'
-                    },
-                    {
-                        date: '28/03/2020 10:20:10',
-                        text: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '28/03/2020 16:15:22',
-                        text: 'Ah scusa!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Luisa',
-                avatar: '_4',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        text: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        text: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
-                    }
-                ],
-            },
-        ],
-        counterContact: 0,
+    * {
+        box - sizing: border - box;
+        margin: 0;
+        padding: 0;
     }
-})
 
-/* qui la prova del codice */
+    body {
+        height: 100 vh;
+        background - image: linear - gradient(to bottom, #009688 0px, # 009688 80 px, #DCDBD2 80 px, #DCDBD2 100 % );
+        font - family: 'Roboto',
+        sans - serif;
+    }
+
+    header {
+        height: 80 px;
+        background - color: #009688;
+
+}
 
 
+
+
+
+/* utility */
+
+
+
+.flex {
+
+    display: flex;
+
+}
+
+
+
+
+
+/* ;;;;;;; */
+
+
+
+.window {
+
+    max-width: 1000px;
+
+    height: 90vh;
+
+    background-color: honeydew;
+
+    margin: auto;
+
+    margin-top: 20px;
+
+}
+
+
+
+
+
+/* colonna di sinistra */
+
+
+
+aside {
+
+    background-color: # f1f1f1;
+        height: 100 % ;
+        width: 33.33333333 % ;
+    }
+
+    .asideHeader {
+        height: 60 px;
+        background - color: #EAEAEA;
+        align - items: center;
+        justify - content: space - between;
+    }
+
+    .search {
+        background - color: #F3EEEA;
+    }
+
+    .avatar {
+        align - items: center;
+    }
+
+    .avatar > img {
+        width: 50 px;
+        border - radius: 50 % ;
+    }
+
+    .interaction {
+        margin - right: 1 rem;
+        font - size: 1.3 rem;
+        color: rgb(173, 173, 173);
+        align - items: center;
+    }
+
+    .interaction i {
+        margin: 0 0.5 rem;
+    }
+
+
+    /* sezione messaggio notifiche */
+
+    .connectionError {
+        height: 70 px;
+        background - color: #8EDAFC;
+
+    align-items: center;
+
+}
+
+
+
+.connectionError p {
+
+    font-size: 15px;
+
+}
+
+
+
+.connectionError a {
+
+    font-size: 13px;
+
+    color: gray;
+
+}
+
+
+
+.iconBell {
