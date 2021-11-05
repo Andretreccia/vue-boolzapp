@@ -71,7 +71,6 @@ aside {
     margin: 0 0.5rem;
 }
 
-
 /* sezione messaggio notifiche */
 
 .connectionError {
@@ -139,6 +138,10 @@ aside {
     background-color: white;
     padding: 5px;
 }
+.contactName{
+    max-width: 70%;
+}
+
 
 .contact.selected {
     background-color: rgb(224, 224, 224);
@@ -148,6 +151,12 @@ aside {
     width: 60px;
     border-radius: 60px;
     margin-right: 10px;
+}
+.lastMessage{
+    color: darkgray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
@@ -176,7 +185,12 @@ aside {
     position: relative;
     justify-content: space-between;
 }
-
+ .textMessageSingle{
+     word-wrap: break-word;
+ }
+ .testuno{
+     max-width: 200px;
+ }
 .sent {
     background-color: #D5F9BA;
     align-self: flex-end;

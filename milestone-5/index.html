@@ -28,7 +28,7 @@
                     <div class="asideHeader flex">
                         <div class="avatar flex">
                             <img src="../milestone-2/img/avatar_io.jpg" alt="">
-                            <p>Nome utente</p>
+                            <p>Treccia</p>
                         </div>
                         <!-- icone nper interazioni-->
                         <div class="interaction flex">
@@ -71,6 +71,7 @@
                         </div>
                         <div class="contactName">
                             <p>{{contact.name}}</p>
+                            <p class="lastMessage">{{contact.messages[contact.messages.length -1 ].text}}</p>
                         </div>
                     </div>
 
@@ -111,8 +112,8 @@
                         <div :class="message.status" class="message flex"
                             v-for="(message, index) in
                             contacts[counterContact].messages">
-                            <div>
-                                <p>{{message.text}}</p>
+                            <div class="testuno">
+                                <p class="textMessageSingle">{{message.text}}</p>
                                 <span>{{message.date}}</span>
                             </div>
                            <div class="dropOptionIcon">
