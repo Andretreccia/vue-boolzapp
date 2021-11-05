@@ -92,6 +92,9 @@ const app = new Vue({
 
     },
     methods: {
+        deleteMessage(i){
+            this.contacts[this.counterContact].messages.splice(i, 1)
+        },
         dropOption(i){
             if(this.flagDrop === false){
                 this.flagDrop = true

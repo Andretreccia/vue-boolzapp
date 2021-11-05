@@ -115,7 +115,7 @@
                                 <p>{{message.text}}</p>
                                 <span>{{message.date}}</span>
                             </div>
-                           <div>
+                           <div class="dropOptionIcon">
                                 <i @click="dropOption(index)" class="fas fa-angle-down"></i>
                            </div>
 
@@ -123,7 +123,7 @@
                             <div class="dropOption" :class="index ===
                             counterMessage  ? 'dropVisible' : ''">
                                 <p>Message info</p><br>
-                                <p>Delete message</p>
+                                <p style="cursor:pointer" @click="deleteMessage(index)">Delete message</p>
 
                             </div>
                         </div>
