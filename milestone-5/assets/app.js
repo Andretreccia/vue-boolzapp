@@ -88,7 +88,7 @@ const app = new Vue({
         searchContact: "",
 
         counterMessage: "",
-        flagDrop: false
+        flagDrop: false,
 
     },
     methods: {
@@ -120,7 +120,7 @@ const app = new Vue({
         receiveMessage() {
             this.contacts[this.counterContact].messages.push({
 
-                date: '10/01/2020 15:50:00',
+                date: dayjs().format('DD/MM/YYYY H:mm:ss'),
                 text: "ok",
                 status: 'received'
             })
@@ -134,7 +134,7 @@ const app = new Vue({
             if (this.newMessage != "") {
                 this.contacts[this.counterContact].messages.push({
 
-                    date: '10/01/2020 15:50:00',
+                    date: dayjs().format('DD/MM/YYYY H:mm:ss'),
                     text: this.newMessage,
                     status: 'sent'
                 })
