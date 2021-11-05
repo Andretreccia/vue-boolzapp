@@ -108,11 +108,24 @@
 
                     </div>
                     <div class="textChat flex">
-                        <div :class="message.status" class="message"
-                            v-for="message in
+                        <div :class="message.status" class="message flex"
+                            v-for="(message, index) in
                             contacts[counterContact].messages">
-                            <p>{{message.text}}</p>
-                            <span>{{message.date}}</span>
+                            <div>
+                                <p>{{message.text}}</p>
+                                <span>{{message.date}}</span>
+                            </div>
+                           <div>
+                                <i @click="dropOption(index)" class="fas fa-angle-down"></i>
+                           </div>
+
+                            <!-- menu opzioni -->
+                            <div class="dropOption" :class="index ===
+                            counterMessage  ? 'dropVisible' : ''">
+                                <p>Message info</p><br>
+                                <p>Delete message</p>
+
+                            </div>
                         </div>
                         <!-- <div class="message received">
                         <p>prova testo messaggio di lorem</p>

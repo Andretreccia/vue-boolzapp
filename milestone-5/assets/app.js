@@ -87,8 +87,21 @@ const app = new Vue({
         newMessage: "",
         searchContact: "",
 
+        counterMessage: "",
+        flagDrop: false
+
     },
     methods: {
+        dropOption(i){
+            if(this.flagDrop === false){
+                this.flagDrop = true
+                this.counterMessage = i
+            }
+            else{
+                this.flagDrop = false
+                this.counterMessage = ""
+            }
+        },
          searchFunction() {
            this.contacts.forEach(element =>{
                
