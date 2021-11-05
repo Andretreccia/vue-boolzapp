@@ -96,7 +96,6 @@ const app = new Vue({
 
     },
     methods: {
-
         //funzione per eliminare il singolo messaggio
         deleteMessage(i){
             this.contacts[this.counterContact].messages.splice(i, 1)

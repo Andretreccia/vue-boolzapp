@@ -36,7 +36,7 @@
                 <aside class="">
                     <div class="asideHeader flex">
                         <div class="avatar flex">
-                            <img src="../milestone-2/img/avatar_io.jpg" alt="">
+                            <img src="./img/avatar_io.jpg" alt="">
                             <p>Treccia</p>
                         </div>
 
@@ -82,7 +82,7 @@
                             flex" v-for="(contact, index) in contacts"
                             v-if="contact.visible === true">
                             <div class="imgContact">
-                                <img :src="'../milestone-2/img/avatar'+
+                                <img :src="'./img/avatar'+
                                     contact.avatar + '.jpg'" alt="">
                             </div>
                             <div class="contactName">
@@ -101,7 +101,7 @@
                 <div class="chat">
                     <div class="headerChat flex">
                         <div class="avatar flex">
-                            <img :src="'../milestone-2/img/avatar'+
+                            <img :src="'./img/avatar'+
                                 contacts[counterContact].avatar + '.jpg'"
                                 alt="">
                             <div class="avatarChat">
