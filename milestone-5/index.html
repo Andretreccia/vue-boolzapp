@@ -70,6 +70,7 @@
                                     contact.avatar + '.jpg'" alt="">
                         </div>
                         <div class="contactName">
+                            <p class="lastDate">{{contact.messages[contact.messages.length -1 ].date}}</p>
                             <p>{{contact.name}}</p>
                             <p class="lastMessage">{{contact.messages[contact.messages.length -1 ].text}}</p>
                         </div>
@@ -97,7 +98,7 @@
                                 alt="">
                             <div class="avatarChat">
                                 <h6>{{contacts[counterContact].name}}</h6>
-                                <p>Ultimo accesso oggi alle</p>
+                                <p>Ultimo accesso oggi alle <span></span></p>
                             </div>
                         </div>
 

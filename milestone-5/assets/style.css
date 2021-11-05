@@ -8,6 +8,7 @@ body {
     height: 100vh;
     background-image: linear-gradient(to bottom, #009688 0px, #009688 80px, #DCDBD2 80px, #DCDBD2 100%);
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 header {
@@ -109,7 +110,7 @@ aside {
 
 .containerSearch input {
     width: calc(100% - 30px);
-    height: 30px;
+    height: 40px;
     border-style: none;
     padding: 5px;
 }
@@ -126,11 +127,13 @@ aside {
 .search {
     background-color: white;
     width: 100%;
+
 }
 
 .chatList {
     height: calc(100% - 180px);
     overflow-y: auto;
+    background-color: white;
 }
 
 .contact {
@@ -138,8 +141,11 @@ aside {
     background-color: white;
     padding: 5px;
 }
+.contact:hover{
+    background-color: rgb(241, 241, 241);
+}
 .contactName{
-    max-width: 70%;
+    width: 70%;
 }
 
 
@@ -157,6 +163,11 @@ aside {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.lastDate{
+    color: darkgray;
+    font-size: 12px;
+    text-align: end;
 }
 
 
