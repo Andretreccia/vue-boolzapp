@@ -83,18 +83,25 @@ const app = new Vue({
                 ],
             },
         ],
+        //valore indice oggetto
         counterContact: 0,
+        //valore messaggio inviato
         newMessage: "",
+        //valore input inserito per la ricerca
         searchContact: "",
-
+        //valore indice singolo messaggio
         counterMessage: "",
+        //variabile sentinella per la funzione dropOption(i)
         flagDrop: false,
 
     },
     methods: {
+
+        //funzione per eliminare il singolo messaggio
         deleteMessage(i){
             this.contacts[this.counterContact].messages.splice(i, 1)
         },
+        //funzione per fare apparire/scromparire il menu per il singolo messaggio
         dropOption(i){
             if(this.flagDrop === false){
                 this.flagDrop = true
@@ -105,6 +112,7 @@ const app = new Vue({
                 this.counterMessage = ""
             }
         },
+        //funzione per ciclare nell'array contatti e visualizzare solo quelli che contengono le lettere inserite
          searchFunction() {
            this.contacts.forEach(element =>{
                
@@ -117,6 +125,7 @@ const app = new Vue({
            })
 
         },
+        //funzione per ricevere un messaggio automatico dopo l invio
         receiveMessage() {
             this.contacts[this.counterContact].messages.push({
 
@@ -126,10 +135,12 @@ const app = new Vue({
             })
 
         },
+        //funzione per rivere l indice dell oggetto cliccato 
         selectContact(i) {
             this.counterContact = i
 
         },
+        //funzione per il push di un messggio inviato nella lista dei messggi con il singolo contatto
         sendText() {
             if (this.newMessage != "") {
                 this.contacts[this.counterContact].messages.push({
@@ -144,12 +155,3 @@ const app = new Vue({
         }
     }
 })
-
-/* qui la prova del codice */
-//creazione oggetto vuoto
-//l utente scrive nell input
-//collegamento v-modelcon l oggetto vuoto
-//quello che inserisce viene inserito automaticamente in un oggetto
-
-//vedere se le lettere che scrive l utente sono incluse nella stringa del nome
-//se sono incluse visualizzare gli oggetti(contatti) che includono quelle lettere

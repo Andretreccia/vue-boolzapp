@@ -21,16 +21,29 @@
 
     <body>
         <div id="root">
-            <!-- finestra dell app -->
+
+
+            <!--
+                 finestra dell app 
+                -->
+
             <div class="window flex">
-                <!-- colonna di sinistra -->
+
+                <!--
+                     colonna di sinistra 
+                    -->
+
                 <aside class="">
                     <div class="asideHeader flex">
                         <div class="avatar flex">
                             <img src="../milestone-2/img/avatar_io.jpg" alt="">
                             <p>Treccia</p>
                         </div>
-                        <!-- icone nper interazioni-->
+
+                        <!--
+                             icone nper interazioni
+                            -->
+
                         <div class="interaction flex">
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
@@ -55,41 +68,36 @@
                                 v-model="searchContact"
                                 placeholder="Cerca o inizia una nuova chat">
                         </span>
-
                     </div>
                     <div class="chatList">
-                        <!-- singolo contatto -->
-                        
+                        <!--
+                             singolo contatto
+                             -->
+
                         <!-- contact.name.toLowerCase().includes(searchContact.toLowerCase()) -->
+
 
                         <div @click="selectContact(index)" :class="index ===
                             counterContact ? 'selected' : ''" class="contact
-                            flex" v-for="(contact, index) in contacts" v-if="contact.visible === true">
-                        <div class="imgContact">
-                            <img :src="'../milestone-2/img/avatar'+
+                            flex" v-for="(contact, index) in contacts"
+                            v-if="contact.visible === true">
+                            <div class="imgContact">
+                                <img :src="'../milestone-2/img/avatar'+
                                     contact.avatar + '.jpg'" alt="">
-                        </div>
-                        <div class="contactName">
-                            <p class="lastDate">{{contact.messages[contact.messages.length -1 ].date}}</p>
-                            <p>{{contact.name}}</p>
-                            <p class="lastMessage">{{contact.messages[contact.messages.length -1 ].text}}</p>
+                            </div>
+                            <div class="contactName">
+                                <p class="lastDate">{{contact.messages[contact.messages.length
+                                    -1 ].date}}</p>
+                                <p>{{contact.name}}</p>
+                                <p class="lastMessage">{{contact.messages[contact.messages.length
+                                    -1 ].text}}</p>
+                            </div>
                         </div>
                     </div>
-
-                        <!-- <div class="contact flex">
-                       <div class="imgContact">
-                            <img src="../milestone-2/img/avatar_1.jpg" alt="">
-                       </div>
-                       <div class="contactName">
-                           <p>Michele</p>
-                       </div>
-
-                    </div> -->
-                    </div>
-
-
                 </aside>
-                <!-- colonna di destra, contenuto della chat -->
+                <!-- 
+                    colonna di destra, contenuto della chat 
+                -->
                 <div class="chat">
                     <div class="headerChat flex">
                         <div class="avatar flex">
@@ -98,17 +106,21 @@
                                 alt="">
                             <div class="avatarChat">
                                 <h6>{{contacts[counterContact].name}}</h6>
-                                <p>Ultimo accesso oggi alle <span></span></p>
+                                <p>Ultimo accesso oggi alle <span>{{contacts[counterContact].messages[contacts[counterContact].messages.length -1 ].date}}</span></p>
                             </div>
                         </div>
-
+                        <!-- 
+                            icone per interagire con la chat
+                         -->
                         <div class="interaction flex">
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
-
                     </div>
+                    <!-- 
+                        sottofinestra con i messaggi 
+                     -->
                     <div class="textChat flex">
                         <div :class="message.status" class="message flex"
                             v-for="(message, index) in
@@ -117,27 +129,32 @@
                                 <p class="textMessageSingle">{{message.text}}</p>
                                 <span>{{message.date}}</span>
                             </div>
-                           <div class="dropOptionIcon">
-                                <i @click="dropOption(index)" class="fas fa-angle-down"></i>
-                           </div>
+                            <div class="dropOptionIcon">
+                                <i @click="dropOption(index)" class="fas
+                                    fa-angle-down"></i>
+                            </div>
 
-                            <!-- menu opzioni -->
+                            <!-- 
+                                menu opzioni drop
+                            -->
                             <div class="dropOption" :class="index ===
-                            counterMessage  ? 'dropVisible' : ''">
+                                counterMessage ? 'dropVisible' : ''">
                                 <p>Message info</p><br>
-                                <p style="cursor:pointer" @click="deleteMessage(index)">Delete message</p>
-
+                                <p style="cursor:pointer"
+                                    @click="deleteMessage(index)">Delete message</p>
                             </div>
                         </div>
-                        <!-- <div class="message received">
-                        <p>prova testo messaggio di lorem</p>
-                        <span></span>
-                    </div> -->
                     </div>
+                    <!-- 
+                        sezione per gli input vocali e di testo
+                     -->
                     <div class="inputChat flex">
                         <div class="emoticons">
                             <i class="far fa-smile"></i>
                         </div>
+                        <!-- 
+                            messaggio di testo
+                         -->
                         <input class="textMessage" type="text"
                             @keyup.enter="sendText" v-model="newMessage"
                             placeholder="Scrivi un messaggio">

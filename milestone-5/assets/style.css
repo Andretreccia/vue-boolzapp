@@ -163,6 +163,7 @@ aside {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 13px;
 }
 .lastDate{
     color: darkgray;
@@ -296,9 +297,3 @@ aside {
 .message:hover .dropOptionIcon{
     visibility: visible;
 }
-
-
-/* linear-gradient sullo sfondo 
-e altezza del bosy 100vh
-
- */
