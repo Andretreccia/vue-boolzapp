@@ -59,11 +59,12 @@
                     </div>
                     <div class="chatList">
                         <!-- singolo contatto -->
+                        
                         <!-- contact.name.toLowerCase().includes(searchContact.toLowerCase()) -->
 
                         <div @click="selectContact(index)" :class="index ===
                             counterContact ? 'selected' : ''" class="contact
-                            flex" v-if="contact.name.toLowerCase().includes(searchContact.toLowerCase())" v-for="(contact, index) in contacts">
+                            flex" v-for="(contact, index) in contacts" v-if="contact.visible === true">
                         <div class="imgContact">
                             <img :src="'../milestone-2/img/avatar'+
                                     contact.avatar + '.jpg'" alt="">

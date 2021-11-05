@@ -90,12 +90,16 @@ const app = new Vue({
     },
     methods: {
          searchFunction() {
+           this.contacts.forEach(element =>{
+               
+               if (element.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
 
-            /*   if (this.contacts.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
-                  this.contacts.visible = true
-              } else {
-                  this.contacts.visible = false
-              } */
+                 element.visible = true
+             } else {
+                 element.visible = false
+             }
+           })
+
         },
         receiveMessage() {
             this.contacts[this.counterContact].messages.push({
